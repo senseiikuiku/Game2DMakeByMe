@@ -24,7 +24,6 @@ public class BossAutomatic : MonoBehaviour
 
 
     private PlayerController playerController;
-    private GameManager gameManager; // Tham chiếu đến GameManager để xử lý điểm số
     private Rigidbody2D rb;
     private ParticleSystem runEffect; // Hiệu ứng chạy (nếu cần, có thể để trống nếu không sử dụng)
     private Animator animator;
@@ -63,7 +62,6 @@ public class BossAutomatic : MonoBehaviour
     private void Awake()
     {
         playerController = FindAnyObjectByType<PlayerController>();
-        gameManager = FindAnyObjectByType<GameManager>(); // Tìm GameManager trong cảnh
         rb = GetComponent<Rigidbody2D>();
         runEffect = GetComponentInChildren<ParticleSystem>(); // Lấy hiệu ứng chạy từ con cái (nếu có)   
         animator = GetComponent<Animator>();

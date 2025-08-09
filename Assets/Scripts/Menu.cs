@@ -3,23 +3,26 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-
-    private GameManager gameManager;
+    [SerializeField] private GameObject scrollViewUI;
 
     private void Awake()
     {
-        gameManager = FindAnyObjectByType<GameManager>();
-
+        if (scrollViewUI != null)
+        {
+            scrollViewUI.SetActive(false); // Ẩn giao diện ScrollView khi khởi tạo
+        }
     }
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("Game");
+        bool isActive = scrollViewUI.activeSelf;
+        scrollViewUI.SetActive(!isActive); // Chuyển đổi trạng thái hiển thị của ScrollViewUI
+        Time.timeScale = isActive ? 1 : 0; // Dừng hoặc tiếp tục trò chơi
     }
 
     public void OpenSettings()
     {
-        gameManager.ToggleMusicBtn();
+        UIManager.Instance.ToggleMusicUI();
     }
 
     public void QuitGame()

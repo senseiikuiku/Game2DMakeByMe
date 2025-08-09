@@ -2,12 +2,10 @@
 
 public class FoodLv2 : MonoBehaviour
 {
-    private GameManager gameManager;
     private AudioManager audioManager;
 
     private void Awake()
     {
-        gameManager = FindAnyObjectByType<GameManager>();
         audioManager = FindAnyObjectByType<AudioManager>();
     }
 
@@ -15,11 +13,11 @@ public class FoodLv2 : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (gameManager != null)
+            if (GameManager.Instance != null)
             {
                 audioManager.PlayEatFoodLv2(); // Phát âm thanh khi ăn thức ăn cấp 2
-                gameManager.AddLive(2);          // Thêm 2 mạng cho người chơi
-                gameManager.TurnOnEffect();      // Bật hiệu ứng khi ăn thức ăn
+                GameManager.Instance.AddLive(2);          // Thêm 2 mạng cho người chơi
+                GameManager.Instance.TurnOnEffect();      // Bật hiệu ứng khi ăn thức ăn
             }
             Destroy(gameObject); // Phá hủy đối tượng thức ăn
         }

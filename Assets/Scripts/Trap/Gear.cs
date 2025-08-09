@@ -7,12 +7,6 @@ public class Gear : MonoBehaviour
     [SerializeField] private float speed = 2f; // Tốc độ di chuyển của bánh răng
     private Vector3 target; // Điểm đích mà bánh răng sẽ di chuyển tới
 
-    private GameManager gameManager; // Tham chiếu đến GameManager để quản lý trò chơi
-
-    private void Awake()
-    {
-        gameManager = FindAnyObjectByType<GameManager>(); // Tìm GameManager trong cảnh
-    }
 
     private void Start()
     {
@@ -21,7 +15,7 @@ public class Gear : MonoBehaviour
 
     void Update()
     {
-        if (gameManager.IsGameOver() || gameManager.IsGameWin())
+        if (GameManager.Instance.IsGameOver() || GameManager.Instance.IsGameWin())
             return;// Nếu trò chơi đã kết thúc hoặc thắng, không thực hiện di chuyển
 
         // Kiểm tra khoảng cách giữa vị trí hiện tại và điểm đích

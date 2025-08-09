@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded; // Cờ để kiểm tra xem người chơi có ở trên mặt đất không
     private Animator animator; // Thành phần hoạt hình cho hoạt ảnh (nếu cần)
     public Rigidbody2D rb;
-    private GameManager gameManager; // Tham khảo GameManager để xử lý điểm số
     private Player_UI playerUI; // Tham chiếu đến Player_UI để cập nhật giao diện người chơi
     private AudioManager audioManager; // Tham chiếu đến AudioManager để biết hiệu ứng âm thanh
     private PlayerCollision playerCollision; // Tham chiếu đến PlayerCollision để xử lý va chạm với kẻ địch hoặc cạm bẫy
@@ -43,7 +42,6 @@ public class PlayerController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        gameManager = FindAnyObjectByType<GameManager>(); // tim GameManager trong cảnh
         playerUI = FindAnyObjectByType<Player_UI>(); // Tìm Player_UI trong cảnh
         audioManager = FindAnyObjectByType<AudioManager>();
         playerCollision = FindAnyObjectByType<PlayerCollision>(); // Tìm PlayerCollision trong cảnh
@@ -57,7 +55,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isStunned)
             return;
-        if (gameManager.IsGameOver() || gameManager.IsGameWin())
+        if (GameManager.Instance.IsGameOver() || GameManager.Instance.IsGameWin())
             return; // Nếu trò chơi đã kết thúc hoặc thắng, không xử lý điều khiển
         HandleMovement();
         HandleJump();
@@ -141,11 +139,11 @@ public class PlayerController : MonoBehaviour
         if (isInvincible)
             return;
 
-        gameManager.AddLive(-1); // Giảm số mạng của người chơi khi bị tấn công
+        GameManager.Instance.AddLive(-1); // Giảm số mạng của người chơi khi bị tấn công
 
-        if (gameManager != null)
+        if (GameManager.Instance != null)
         {
-            gameManager.TurnOffEffect(); // Tắt hiệu ứng nếu không có GameManager   
+            GameManager.Instance.TurnOffEffect(); // Tắt hiệu ứng nếu không có GameManager   
         }
 
         playerCollision.ReduceSkillLevel(); // Giảm cấp độ kỹ năng khi bị tấn công
@@ -158,7 +156,7 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(BecomeInvincible(1f));
         audioManager.PlayEnemyOrTrapHitSound(); // Người chơi bị Enemy tấn công hoặc dính cạm bẫy
 
-        if (gameManager != null && gameManager.countLive <= 0)
+        if (GameManager.Instance != null && GameManager.Instance.countLive <= 0)
         {
             StartCoroutine(HandleDeathAndGameOver()); // Gọi hàm xử lý chết và game over
 
@@ -172,7 +170,7 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("Dead"); // hành động animation chết
         yield return new WaitForSeconds(1f); // Chờ animation chết hoàn thành (có thể điều chỉnh thời gian)
         audioManager.PlayGameOverSound(); // Phát âm thanh game over
-        gameManager.GameOver();
+        GameManager.Instance.GameOver();
     }
 
 
@@ -276,7 +274,5 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
-
 
 }

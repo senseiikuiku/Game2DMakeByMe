@@ -5,35 +5,40 @@ using System.Collections;
 public class GameManager : MonoBehaviour
 {
     public int score = 0;
-    private int scoreKey = 0; //Theo dõi số lượng chìa khóa đã thu thập
-    [SerializeField] private TextMeshProUGUI scoreText;
-    [SerializeField] private TextMeshProUGUI scoreKeyText; // hiển thị số lượng khóa đã thu thập
+    public int scoreKey = 0; //Theo dõi số lượng chìa khóa đã thu thập
 
-    [SerializeField] public TextMeshProUGUI live;
     public int countLive = 3; // Số mạng mà người chơi có
 
-    [SerializeField] private GameObject gameOverUI;
     private bool isGameOver = false;
 
-    [SerializeField] private GameObject gameWinUI;
     private bool isGameWin = false;
-
-    [SerializeField] private GameObject cartUI; // Giao diện hiện thị giỏ hàng
-
-    [SerializeField] private GameObject musicUI;
-    [SerializeField] private GameObject musicBtn; // Nút để mở giao diện Music
-
-    [SerializeField] private GameObject pauseUI; // Giao diện tạm dừng
-
-    [SerializeField] private GameObject resumeBtn; // Nút tiếp tục trò chơi trong giao diện Pause
-
-    [SerializeField] private GameObject menuBtn; // Nút trở về menu trong giao diện Pause
-
-    [SerializeField] private GameObject restartGameBtn; // Nút chuyển đổi nhạc trong giao diện Pause
 
     private PlayerController playerController; // Tham chiếu đến PlayerController để xử lý các hành động của người chơi
 
-    [SerializeField] public GameObject runEffect; // Hiệu ứng chạy (nếu cần, có thể để trống nếu không sử dụng)
+
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "Game")
+        {
+            FindPlayerController();
+        }
+    }
+
+    private void FindPlayerController()
+    {
+
+        playerController = FindAnyObjectByType<PlayerController>();
+        playerController.enabled = true;
+        if (playerController == null)
+        {
+            Debug.LogWarning("Không tìm thấy PlayerController trong scene!");
+        }
+        else
+        {
+            Debug.Log("Đã tìm thấy PlayerController mới!");
+        }
+    }
 
 
     public static GameManager Instance { get; private set; }
@@ -46,71 +51,36 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject); // Giữ GameManager tồn tại khi chuyển cảnh
-        playerController = FindAnyObjectByType<PlayerController>();
-    }
+        SceneManager.sceneLoaded += OnSceneLoaded; // Đăng ký sự kiện khi cảnh được tải
 
-
-
-    void Start()
-    {
-        UpdateLive();
-        UpdateScore();
-        UpdateScoreKey();
-        if (gameOverUI != null)
-            gameOverUI.SetActive(false); // Ẩn giao diện Game Over khi bắt đầu
-        if (gameWinUI != null)
-            gameWinUI.SetActive(false); // Ân giao diện Game Win khi bắt đầu
-        if (cartUI != null)
-            cartUI.SetActive(false); // Ẩn giao diện giỏ hàng khi bắt đầu
-        if (pauseUI != null)
-            pauseUI.SetActive(false); // Ẩn giao diện Pause khi bắt đầu
-        if (musicUI != null)
-            musicUI.SetActive(false);// Ẩn giao diện Music khi bắt đầu
-        if (runEffect != null)
-            runEffect.SetActive(false); // Tắt hiệu ứng chạy khi bắt đầu
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().name != "Menu")
         {
-            if (pauseUI != null && pauseUI.activeSelf)
-            {
-                ClosePauseUI(); // Đóng giao diện Pause nếu đang mở
-            }
-            else
-            {
-                TogglePause(); // Hiển thị giao diện Pause nếu không mở
-            }
+            UIManager.Instance.TogglePauseUI();
         }
     }
 
     public void TurnOnEffect()
     {
-        if (runEffect != null)
-        {
-            runEffect.SetActive(true); // Bật hiệu ứng chạy
-        }
+        UIManager.Instance.ToggleRunEffect(true);
 
         if (playerController != null)
         {
-            playerController.moveSpeed += 1f;
             playerController.maxJumpCount = 2;
+            playerController.moveSpeed += 1f;
         }
     }
 
     public void TurnOffEffect()
     {
-
-        if (runEffect != null)
-        {
-            runEffect.SetActive(false); // Tắt hiệu ứng chạy
-        }
+        UIManager.Instance.ToggleRunEffect(false);
 
         if (playerController != null)
         {
             playerController.moveSpeed = 5f;
-            playerController.maxJumpCount = 1; // Đặt lại số lần nhảy tối đa về 1
         }
     }
 
@@ -119,7 +89,7 @@ public class GameManager : MonoBehaviour
         if (!isGameOver && !isGameWin)
         {
             score += points;
-            UpdateScore();
+            UIManager.Instance.UpdateScore(score);
         }
     }
 
@@ -128,7 +98,7 @@ public class GameManager : MonoBehaviour
         if (!isGameOver && !isGameWin)
         {
             scoreKey += points;
-            UpdateScoreKey();
+            UIManager.Instance.UpdateScoreKey(scoreKey);
         }
     }
 
@@ -137,26 +107,8 @@ public class GameManager : MonoBehaviour
         if (!isGameOver && !isGameWin)
         {
             countLive += lives;
-            UpdateLive();
+            UIManager.Instance.UpdateLive(countLive);
         }
-    }
-
-    private void UpdateScore()
-    {
-        if (scoreText != null)
-            scoreText.text = score.ToString();
-    }
-
-    private void UpdateScoreKey()
-    {
-        if (scoreKeyText != null)
-            scoreKeyText.text = scoreKey.ToString();
-    }
-
-    private void UpdateLive()
-    {
-        if (live != null)
-            live.text = countLive.ToString();
     }
 
     public void GameOver()
@@ -164,14 +116,14 @@ public class GameManager : MonoBehaviour
         isGameOver = true;
         score = 0;
         scoreKey = 0;
-        Time.timeScale = 0; // Dừng thời gian để tạm dừng trò chơi
-        gameOverUI.SetActive(true); // Hiển thị giao diện Game Over
+        Time.timeScale = 0;
+        UIManager.Instance.ShowGameOverUI();
     }
     public void GameWin()
     {
         isGameWin = true;
-        Time.timeScale = 0; // Dừng thời gian để tạm dừng trò chơi
-        gameWinUI.SetActive(true); // hien thị giao diện Game Wins
+        Time.timeScale = 0;
+        UIManager.Instance.ShowGameWinUI();
     }
 
     public void RestartGame()
@@ -179,100 +131,29 @@ public class GameManager : MonoBehaviour
         isGameOver = false;
         score = 0;
         scoreKey = 0;
-        UpdateScore();
-        Time.timeScale = 1; // bắt đầu lại trò chơi
+        countLive = 3;
+        Time.timeScale = 1;
         SceneManager.LoadScene("Game");
     }
 
     public void GotoMenu()
     {
+        ResetGameFlags();
+        score = 0;
+        scoreKey = 0;
+        countLive = 3;
+        Time.timeScale = 1;
         SceneManager.LoadScene("Menu");
-        Time.timeScale = 1; // bắt đầu lại trò chơi
     }
 
-    public void ToggleCartUI()
+    public void ResetGameFlags()
     {
-        if (cartUI != null)
-        {
-            bool isActive = cartUI.activeSelf;
-            cartUI.SetActive(!isActive); // Chuyển đổi trạng thái hiển thị của giỏ hàng
-            Time.timeScale = isActive ? 1 : 0; // Dừng hoặc tiếp tục trò chơi
-        }
-    }
-
-    public void TogglePause()
-    {
-        if (pauseUI != null)
-        {
-            bool isPaused = pauseUI.activeSelf;
-            pauseUI.SetActive(!isPaused); // Chuyển đổi trạng thái hiển thị của giao diện Pause
-            Time.timeScale = isPaused ? 1 : 0; // Dừng hoặc tiếp tục trò chơi
-        }
-    }
-
-    public void ClosePauseUI()
-    {
-        if (pauseUI != null && pauseUI.activeSelf)
-        {
-            pauseUI.SetActive(false); // Ẩn giao diện Pause
-            Time.timeScale = 1; // Tiếp tục trò chơi
-        }
-    }
-
-    public void ResumeGame()
-    {
-        if (pauseUI != null && pauseUI.activeSelf)
-        {
-            pauseUI.SetActive(false); // Ẩn giao diện Pause
-            Time.timeScale = 1; // Tiếp tục trò chơi
-        }
-    }
-
-    public void MenuBtn()
-    {
-        if (pauseUI != null && pauseUI.activeSelf)
-        {
-            pauseUI.SetActive(false); // Ẩn giao diện Pause
-
-        }
-        GotoMenu(); // Trở về menu chính
-    }
-
-    public void RestartGameBtn()
-    {
-        if (pauseUI != null && pauseUI.activeSelf)
-        {
-            pauseUI.SetActive(false); // Ẩn giao diện Pause
-        }
-        RestartGame(); // Bắt đầu lại trò chơi
+        isGameOver = false;
+        isGameWin = false;
     }
 
 
-    public void ToggleMusicBtn()
-    {
-        if (musicUI != null && musicBtn != null)
-        {
-            musicUI.SetActive(!musicUI.activeSelf); // Chuyển đổi trạng thái hiển thị của nút Music
-            ClosePauseUI(); // Đóng giao diện Pause nếu đang mở
-            if (musicUI.activeSelf)
-            {
-                Time.timeScale = 0; // Dừng thời gian khi mở giao diện Music
-            }
-            else
-            {
-                Time.timeScale = 1; // Tiếp tục trò chơi khi đóng giao diện Music
-            }
-        }
-    }
-
-    public bool IsGameOver()
-    {
-        return isGameOver;
-    }
-
-    public bool IsGameWin()
-    {
-        return isGameWin;
-    }
+    public bool IsGameOver() => isGameOver;
+    public bool IsGameWin() => isGameWin;
 
 }

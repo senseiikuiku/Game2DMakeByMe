@@ -4,7 +4,6 @@ using Unity.Cinemachine;
 
 public class PlayerCollision : MonoBehaviour
 {
-    private GameManager gameManager;
     private AudioManager audioManager;
     private PlayerController playerController;
     private int keyCount = 0;
@@ -14,7 +13,6 @@ public class PlayerCollision : MonoBehaviour
 
     private void Awake()
     {
-        gameManager = FindAnyObjectByType<GameManager>();
         audioManager = FindAnyObjectByType<AudioManager>();
         playerController = FindAnyObjectByType<PlayerController>();
     }
@@ -26,7 +24,7 @@ public class PlayerCollision : MonoBehaviour
             case "Coin":
                 Destroy(collision.gameObject);
                 audioManager?.PlayCoinSound();
-                gameManager?.AddScore(1);
+                GameManager.Instance?.AddScore(1);
                 break;
 
             case "Trap":
@@ -40,9 +38,9 @@ public class PlayerCollision : MonoBehaviour
                 Destroy(collision.gameObject);
                 keyCount++;
                 audioManager?.PlayKeySound();
-                gameManager?.AddScoreKey(1);
+                GameManager.Instance?.AddScoreKey(1);
                 if (keyCount >= 3)
-                    gameManager?.GameWin();
+                    GameManager.Instance?.GameWin();
                 break;
 
             case "TeleportationPortal":
