@@ -27,6 +27,11 @@ TagManager:
   - DashWindEffect
   - ExplosionEffect
   - FireBallEffect
+  - CloseGate
+  - OpenGate
+  - MysteryBlockCoin
+  - EnemySlime
+  - Water
   layers:
   - Default
   - TransparentFX
@@ -40,9 +45,9 @@ TagManager:
   - Player
   - BossBullet
   - Enemy
-  - 
-  - 
-  - 
+  - Gate
+  - CameraBounds
+  - DeadEnemy
   - 
   - 
   - 
@@ -67,8 +72,14 @@ TagManager:
   - name: BackGround
     uniqueID: 1449864487
     locked: 0
+  - name: Item
+    uniqueID: 1261554987
+    locked: 0
   - name: Ground
     uniqueID: 4087166607
+    locked: 0
+  - name: Water
+    uniqueID: 1815850015
     locked: 0
   - name: ForeGround
     uniqueID: 4287565019
@@ -85,8 +96,17 @@ TagManager:
   - name: MysteryBlock
     uniqueID: 84193369
     locked: 0
+  - name: MysteryBlockCoin
+    uniqueID: 3944438163
+    locked: 0
   - name: ObjectBlock
     uniqueID: 3102953983
+    locked: 0
+  - name: TeleportationPortal
+    uniqueID: 1575442495
+    locked: 0
+  - name: Gate
+    uniqueID: 308279459
     locked: 0
   - name: Enemy
     uniqueID: 1029608489
@@ -97,20 +117,14 @@ TagManager:
   - name: Player
     uniqueID: 3968021451
     locked: 0
+  - name: FireBullet
+    uniqueID: 2256891371
+    locked: 0
   - name: FireBallEffect
     uniqueID: 1361882655
     locked: 0
   - name: ExplosionEffect
     uniqueID: 1694430681
-    locked: 0
-  - name: TeleportationPortal
-    uniqueID: 1575442495
-    locked: 0
-  - name: Item
-    uniqueID: 1261554987
-    locked: 0
-  - name: FireBullet
-    uniqueID: 2256891371
     locked: 0
   - name: BulletExplosion
     uniqueID: 1118926213

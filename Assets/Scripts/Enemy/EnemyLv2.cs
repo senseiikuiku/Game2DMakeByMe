@@ -46,7 +46,7 @@ public class EnemyLv2 : EnemyManager
             Rigidbody2D slashingRb = collision.gameObject.GetComponent<Rigidbody2D>(); // Lấy Rigidbody2D của SlashingLv1 hoặc SlashingLv2
             if (slashingRb != null)
             {
-                Vector2 slashDir = slashingRb.linearVelocity.normalized; // Lấy hướng của SlashingLv1 hoặc SlashingLv2
+                Vector2 slashDir = (transform.position - collision.transform.position).normalized; // Lấy hướng của SlashingLv1 đến kẻ thù
                 EnemyLv2DieBySlash(slashDir); // Gọi hàm xử lý khi kẻ thù bị chém
             }
         }
@@ -55,7 +55,7 @@ public class EnemyLv2 : EnemyManager
             Rigidbody2D swordWaveRb = collision.gameObject.GetComponent<Rigidbody2D>(); // Lấy Rigidbody2D của SwordWave
             if (swordWaveRb != null)
             {
-                Vector2 swordWaveDir = swordWaveRb.linearVelocity.normalized; // Lấy hướng của SwordWave
+                Vector2 swordWaveDir = (transform.position - collision.transform.position).normalized; // Lấy hướng của SwordWave đến kẻ thù
                 EnemyLv2DieBySwordWave(swordWaveDir); // Gọi hàm xử lý khi kẻ thù bị chém bởi SwordWave
             }
             Destroy(collision.gameObject); // Xóa SwordWave khi va chạm với kẻ thù  

@@ -6,8 +6,9 @@ public class VolumeSettings : MonoBehaviour
 {
     [SerializeField] public AudioSource backGroundAudioSource;
     [SerializeField] public AudioSource effectAudioSource;
-    [SerializeField] private Slider musicSlider;
-    [SerializeField] private Slider effectSlider;
+    [SerializeField] public Slider musicSlider;
+    [SerializeField] public Slider effectSlider;
+
 
     private void Start()
     {
@@ -21,9 +22,9 @@ public class VolumeSettings : MonoBehaviour
 
         musicSlider.onValueChanged.AddListener(SetMusicVolume);
         effectSlider.onValueChanged.AddListener(SetEffectVolume);
+
+
     }
-
-
 
     private void SetMusicVolume(float value)
     {
@@ -37,5 +38,9 @@ public class VolumeSettings : MonoBehaviour
         effectAudioSource.volume = value;
         PlayerPrefs.SetFloat("EffectVolume", value);
         PlayerPrefs.Save();
+
     }
+
+
+
 }

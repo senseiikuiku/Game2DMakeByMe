@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4547761057735424065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4808768176416585827}
+  - component: {fileID: 7665974226136453452}
+  - component: {fileID: 7881098005279307081}
+  m_Layer: 0
+  m_Name: SlashManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4808768176416585827
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4547761057735424065}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7665974226136453452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4547761057735424065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a317c6b3db5467b45ad1aa1cdad542b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slashPrefabs:
+  - {fileID: 4629185518481022821, guid: 70fd19a6be168af4dabd00d479f32c6f, type: 3}
+  - {fileID: 2427773220619515510, guid: 479b0f4214be2b046b9ac89a7a4c5b26, type: 3}
+  - {fileID: 8010113170874994829, guid: 53c1fd2db8da14a4cad65b85b4ada971, type: 3}
+  - {fileID: 7015225490318197036, guid: b8b9fa643e67c6e48bc7f6cc784f7555, type: 3}
+  slashSpawnPoint: {fileID: 0}
+  slashDelay: 0.4
+  comboResetTime: 1
+  slashLifetime: 0.4
+--- !u!114 &7881098005279307081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4547761057735424065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06a875ac9f071504cac58d37874fd737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slashPrefabs:
+  - {fileID: 5520313655275924041, guid: 34c7b5189d3091e42807a20aedb35d49, type: 3}
+  - {fileID: 6584387667279239545, guid: 298bf463ec67b78449ae1908db79133c, type: 3}
+  - {fileID: 5669838489987363023, guid: b5f8a81079a82b443934e8ebd8feb0ea, type: 3}
+  - {fileID: 209841127437023139, guid: d39aec8bda3090741baf22e23b757f3f, type: 3}
+  slashSpawnPoint: {fileID: 0}
+  slashDelay: 0.4
+  comboResetTime: 1
+  slashLifetime: 0.4
+  swordWave: {fileID: 4695332470272761517, guid: cbc639ddbca04894283d3322725fc733, type: 3}
+  swordWaveSpeed: 10
+  swordWaveSpawnPoint: {fileID: 0}

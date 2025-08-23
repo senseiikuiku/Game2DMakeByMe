@@ -10,9 +10,13 @@ public class BrokenGround : TrapGroundManager
         // Kiểm tra nếu Player đứng trên nó (chạm từ phía trên)
         if (collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Đã chạm vào");
             // Kiểm tra nếu player ở phía trên
-            if (collision.contacts[0].normal.y == -1)
+            Debug.Log($"Bao nhieu:  {collision.contacts[0].normal.y}");
+
+            if (collision.contacts[0].normal.y < -0.5f)
             {
+                Debug.Log($"Bao nhieu vao dung:  {collision.contacts[0].normal.y}");
                 if (!isShaking)
                 {
                     StartCoroutine(ShakeAndFall());
@@ -35,6 +39,7 @@ public class BrokenGround : TrapGroundManager
         }
 
         transform.position = originalPosition; // Reset vị trí
+        gameObject.SetActive(false);
         DestroyOrReLive(); // Gọi hàm để hủy hoặc hồi sinh nền đất
 
         // isShaking = false; // không cần nếu Destroy

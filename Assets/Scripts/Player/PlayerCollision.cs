@@ -6,15 +6,20 @@ public class PlayerCollision : MonoBehaviour
 {
     private AudioManager audioManager;
     private PlayerController playerController;
+    private TeleportationPortal portal;
+    private Revive revive;
+    private Gate gate;
+    private InfoKey infoKey;
+
     private int keyCount = 0;
 
-    private bool hasTeleported = false;
-    private bool isReviveA = false;
 
     private void Awake()
     {
         audioManager = FindAnyObjectByType<AudioManager>();
         playerController = FindAnyObjectByType<PlayerController>();
+        gate = FindAnyObjectByType<Gate>();
+        infoKey = FindAnyObjectByType<InfoKey>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -39,39 +44,64 @@ public class PlayerCollision : MonoBehaviour
                 keyCount++;
                 audioManager?.PlayKeySound();
                 GameManager.Instance?.AddScoreKey(1);
-                if (keyCount >= 3)
-                    GameManager.Instance?.GameWin();
                 break;
 
             case "TeleportationPortal":
-                if (!hasTeleported)
+                portal = collision.gameObject.GetComponent<TeleportationPortal>();
+                if (!portal.destinationImg.activeSelf)
                 {
-                    TeleportationPortal portal = collision.GetComponent<TeleportationPortal>();
+                    portal.destinationImg.SetActive(true);
+                }
+                if (!portal.hasTeleported)
+                {
                     if (portal != null)
                     {
                         // đặt lại vị trí người chơi đến điểm đến của cổng dịch chuyển
                         transform.position = new Vector3(portal.GetDestination().position.x, portal.GetDestination().position.y, transform.position.z);
-                        hasTeleported = true;
-                        Invoke(nameof(ResetTeleportFlag), 0.5f);
+                        portal.hasTeleported = true;
+                        Invoke(nameof(portal.ResetTeleportFlag), 0.5f);
                         FixCameraZ();// sửa camera về vị trí chính xác
                     }
                 }
                 break;
 
             case "ReviveA":
-                if (!isReviveA)
+                revive = collision.gameObject.GetComponent<Revive>();
+                if (!revive.isReviveA)
                 {
-                    Revive revive = collision.GetComponent<Revive>();
                     if (revive != null)
                     {
                         // đặt lại vị trí người chơi
                         transform.position = new Vector3(revive.GetReviveB().position.x, revive.GetReviveB().position.y, transform.position.z); // đặt lại vị trí người chơi
-                        isReviveA = true;
-                        Invoke(nameof(ResetReviveFlag), 0.5f);
+                        revive.isReviveA = true;
+                        revive.Invoke(nameof(Revive.ResetReviveFlag), 0.5f); // Reset lại cờ để hồi sinh tiếp
                         FixCameraZ();// sửa camera về vị trí chính xác
                         playerController.TakeDamage(collision.transform.position);// gọi hàm TakeDamage để giảm mạng
                     }
                 }
+                break;
+            case "CloseGate":
+                if (gate != null)
+                {
+                    gate.keyCount = GameManager.Instance.scoreKey;
+                    gate.keyCountText.text = gate.keyCount.ToString();
+                    // Nếu số chìa khóa lớn hơn hoặc = 3 và đang mở closeGate
+                    if (gate.keyCount >= 3 && gate.gateItems[0].activeSelf)
+                    {
+                        gate.gateItems[0].SetActive(false); // đóng gameobject closeGate
+                        gate.gateItems[1].SetActive(true); // mở gameobject openGate
+                    }
+                    else if (gate.keyCount < 3)
+                    {
+                        if (infoKey != null)
+                            // Cập nhật thông báo key còn thiếu
+                            infoKey.ShowInfo(3 - gate.keyCount);
+                    }
+                }
+                break;
+            case "OpenGate":
+                if (gate != null && gate.keyCount >= 3)
+                    GameManager.Instance?.GameWin();
                 break;
         }
     }
@@ -135,10 +165,4 @@ public class PlayerCollision : MonoBehaviour
             vcam.transform.position = camPos;
         }
     }
-
-    // đặt lại cờ dịch chuyển
-    private void ResetTeleportFlag() => hasTeleported = false;
-
-    // đặt lại cờ hồi sinh A
-    private void ResetReviveFlag() => isReviveA = false;
 }

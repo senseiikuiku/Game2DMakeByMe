@@ -60,7 +60,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.64, y: 0.19002533, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3111112861236755014}
@@ -108,7 +108,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1192013313
-  m_SortingLayer: 4
+  m_SortingLayer: 9
   m_SortingOrder: 0
   m_Sprite: {fileID: -74353560, guid: 2c6e7c81a57703e44b5563e50b507cd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -183,3 +183,4 @@ MonoBehaviour:
   - {fileID: 2602129438049089334, guid: c73dbf53a1b07a542be771808e5fddf4, type: 3}
   - {fileID: 6150724535349973022, guid: 7c094cca82b59f24fbc9fa658f24dd12, type: 3}
   objectBlockSpawnPoint: {fileID: 3111112861236755014}
+  reset: 0

@@ -1,18 +1,36 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ButtonAnimation : MonoBehaviour
+public class ButtonAnimation : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    Button btn;
-    Vector3 upScale = new Vector3(1.2f, 1.2f, 1f);
-    private void Awake()
+    //Button btn;
+    private Vector3 hoverScale = new Vector3(1.2f, 1.2f, 1f);
+    private Vector3 downScale = new Vector3(0.9f, 0.9f, 1f);
+
+
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        btn = gameObject.GetComponent<Button>();
-        btn.onClick.AddListener(Anim); // Đăng ký sự kiện khi nút được nhấn
+        // Khi hover
+        LeanTween.scale(gameObject, hoverScale, 0.1f).setIgnoreTimeScale(true);
     }
-    public void Anim()
+
+    public void OnPointerExit(PointerEventData eventData)
     {
-        LeanTween.scale(gameObject, upScale, 0.1f).setIgnoreTimeScale(true);// Tăng kích thước nút
-        LeanTween.scale(gameObject, Vector3.one, 0.1f).setDelay(0.1f).setIgnoreTimeScale(true);// Trở về kích thước ban đầu sau một khoảng thời gian
+        // Khi thoát hover
+        LeanTween.scale(gameObject, Vector3.one, 0.1f).setIgnoreTimeScale(true);
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        // Khi nhấn xuống
+        LeanTween.scale(gameObject, downScale, 0.05f).setIgnoreTimeScale(true);
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        // Khi thả ra
+        LeanTween.scale(gameObject, hoverScale, 0.1f).setIgnoreTimeScale(true);
     }
 }

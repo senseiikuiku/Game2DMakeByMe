@@ -34,9 +34,9 @@ public class FallingGround : TrapGroundManager
 
         rb.bodyType = RigidbodyType2D.Dynamic; // Đặt Rigidbody thành động để rơi xuống
 
-        rb.gravityScale = 2f; // Tăng trọng lực để rơi nhanh hơn
+        rb.gravityScale = 1.2f; // Tăng trọng lực để rơi nhanh hơn
 
-        Invoke(nameof(DestroyOrReLive), 2f); // Gọi hàm để hủy hoặc hồi sinh nền đất sau 2 giây
+        Invoke(nameof(DestroyOrReLive), 1f); // Gọi hàm để hủy hoặc hồi sinh nền đất sau 1 giây
 
     }
 

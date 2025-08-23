@@ -33,6 +33,14 @@ public abstract class EnemyManager : MonoBehaviour
         if (isDead) return; // Nếu kẻ thù đã chết, không thực hiện di chuyển
         float leftBound = startPos.x - distance;
         float rightBound = startPos.x + distance;
+
+        // Kiểm tra vật cản trước mặt bằng Raycast
+        if (IsObstacleInFront())
+        {
+            movingRight = !movingRight; // Đổi hướng
+            Flip();
+        }
+
         if (movingRight)
         {
             transform.Translate(Vector3.right * speed * Time.deltaTime);
@@ -58,6 +66,16 @@ public abstract class EnemyManager : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x *= -1; // Lật theo trục x
         transform.localScale = scale; // Áp dụng thang đo lật
+    }
+
+    // Kiểm tra có vật cản phía trước không
+    private bool IsObstacleInFront()
+    {
+        float rayDistance = 0.5f; // Khoảng cách kiểm tra
+        Vector2 direction = movingRight ? Vector2.right : Vector2.left;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, rayDistance, LayerMask.GetMask("Ground"));
+
+        return hit.collider != null; // Trả về true nếu gặp vật cản
     }
 
     // Hàm này sẽ được gọi khi kẻ thù va chạm với người chơi

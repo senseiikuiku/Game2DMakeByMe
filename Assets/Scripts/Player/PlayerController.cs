@@ -5,7 +5,7 @@ using static UnityEditor.Rendering.ShadowCascadeGUI;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f; // Tốc độ di chuyển của người chơi
-    [SerializeField] private float jumpForce = 15f; // Lực tác dụng khi nhảy
+    [SerializeField] public float jumpForce = 18f; // Lực tác dụng khi nhảy
     [SerializeField] private LayerMask groundLayer; // Lớp để kiểm tra va chạm mặt đất
     [SerializeField] private Transform groundCheck; // Biến để kiểm tra xem người chơi có ở trên mặt đất không
     private bool isGrounded; // Cờ để kiểm tra xem người chơi có ở trên mặt đất không

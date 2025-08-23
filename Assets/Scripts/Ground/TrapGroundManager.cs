@@ -25,6 +25,7 @@ public abstract class TrapGroundManager : MonoBehaviour
 
     protected void RespawnGround()
     {
+        gameObject.SetActive(true);
         GetComponent<Renderer>().enabled = true; // hiện lại
         rb.bodyType = RigidbodyType2D.Kinematic; // Đặt Rigidbody thành tĩnh để không bị ảnh hưởng bởi trọng lực
         rb.gravityScale = 0f; // Đặt trọng lực về 0 để không rơi xuống
@@ -38,6 +39,7 @@ public abstract class TrapGroundManager : MonoBehaviour
         if (reLive)
         {
             GetComponent<Renderer>().enabled = false; // ẩn
+
             Invoke(nameof(RespawnGround), 3f); // Gọi hàm hồi sinh nền đất sau 3 giây
         }
         else

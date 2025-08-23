@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class ObjectBlock : MonoBehaviour
 {
@@ -6,6 +7,9 @@ public class ObjectBlock : MonoBehaviour
     public Transform objectBlockSpawnPoint; // Vị trí xuất hiện của ObjectBlock
 
     private bool isUsed = false; // Biến để kiểm tra xem ObjectBlock đã được sử dụng hay chưa
+
+    public bool reset = false;   // Reset lại mysteryBlock
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -18,39 +22,33 @@ public class ObjectBlock : MonoBehaviour
                 {
                     SpawnRandomFood();
                     isUsed = true;
+                    StartResetTimer();
                     break;
                 }
             }
         }
-        else if (collision.gameObject.CompareTag("BulletLv1") && !isUsed)
+        else if ((collision.gameObject.CompareTag("BulletLv1") || collision.gameObject.CompareTag("BulletLv2")) && !isUsed)
         {
             SpawnRandomFood();
-            isUsed = true; // Đánh dấu là đã sử dụng
-        }
-        else if (collision.gameObject.CompareTag("BulletLv2") && !isUsed)
-        {
-            SpawnRandomFood();
-            isUsed = true; // Đánh dấu là đã sử dụng
+            isUsed = true;
+            StartResetTimer();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("SlashingLv1") && !isUsed)
+        if ((collision.gameObject.CompareTag("SlashingLv1") ||
+             collision.gameObject.CompareTag("SlashingLv2") ||
+             collision.gameObject.CompareTag("SwordWave")) && !isUsed)
         {
             SpawnRandomFood();
-            isUsed = true; // Đánh dấu là đã sử dụng
-        }
-        else if (collision.gameObject.CompareTag("SlashingLv2") && !isUsed)
-        {
-            SpawnRandomFood();
-            isUsed = true; // Đánh dấu là đã sử dụng
-        }
-        else if (collision.gameObject.CompareTag("SwordWave") && !isUsed)
-        {
-            SpawnRandomFood();
-            isUsed = true; // Đánh dấu là đã sử dụng
-            Destroy(collision.gameObject); // Xóa đối tượng SwordWave sau khi va chạm
+            isUsed = true;
+            StartResetTimer();
+
+            if (collision.gameObject.CompareTag("SwordWave"))
+            {
+                Destroy(collision.gameObject); // Xóa SwordWave
+            }
         }
     }
 
@@ -62,5 +60,20 @@ public class ObjectBlock : MonoBehaviour
         GameObject selectedFood = food[randomIndex];
         // Tạo thực phẩm tại vị trí xuất hiện
         Instantiate(selectedFood, objectBlockSpawnPoint.position, Quaternion.identity);
+    }
+
+    private void StartResetTimer()
+    {
+        if (reset) // Chỉ reset nếu bật
+        {
+            StopAllCoroutines();
+            StartCoroutine(ResetAfterDelay(10f)); // 10 giây
+        }
+    }
+
+    private IEnumerator ResetAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        isUsed = false;
     }
 }

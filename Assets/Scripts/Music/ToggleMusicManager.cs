@@ -1,4 +1,5 @@
 ﻿using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,10 +11,12 @@ public abstract class ToggleMusicManager : MonoBehaviour
     [SerializeField] protected Slider slider; // Âm thanh nhạc nền
     protected bool isMusicOn = true;
     public string musicOnKey;
+
     protected virtual void Start()
     {
         isMusicOn = PlayerPrefs.GetFloat(musicOnKey, 1f) > 0f; // Lấy giá trị từ PlayerPrefs
         UpdateMusicState(isMusicOn);
+
     }
 
     protected virtual void Update()
@@ -21,7 +24,7 @@ public abstract class ToggleMusicManager : MonoBehaviour
 
     }
 
-    protected void UpdateMusicState(bool state)
+    public void UpdateMusicState(bool state)
     {
         // Kiểm tra null hoặc thiếu phần tử
         if (musicIcon == null || musicIcon.Length < 2 || image == null || slider == null || audioSorce == null)
@@ -60,4 +63,5 @@ public abstract class ToggleMusicManager : MonoBehaviour
         PlayerPrefs.SetFloat(musicOnKey, isMusicOn ? audioSorce.volume : 0f); // Lưu trạng thái vào PlayerPrefs
         PlayerPrefs.Save(); // Lưu thay đổi
     }
+
 }

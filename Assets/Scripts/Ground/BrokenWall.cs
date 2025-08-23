@@ -11,7 +11,19 @@ public class BrokenWall : TrapGroundManager
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("BulletLv1"))
+        // Kiểm tra có va chạm với Player không
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Kiểm tra hướng va chạm từ bên dưới
+            foreach (ContactPoint2D contact in collision.contacts)
+            {
+                if (contact.normal.y > 0.5f) // Va chạm từ dưới
+                {
+                    Destroy(gameObject, 0.1f);
+                }
+            }
+        }
+        else if (collision.gameObject.CompareTag("BulletLv1"))
         {
             lives--; // Giảm số lần va chạm
             if (lives <= 0)

@@ -45,7 +45,7 @@ public class EnemyLv1 : EnemyManager
             Rigidbody2D slashRb = collision.gameObject.GetComponent<Rigidbody2D>();
             if (slashRb != null)
             {
-                Vector2 direction = (transform.position - collision.transform.position).normalized;
+                Vector2 direction = (transform.position - collision.transform.position).normalized; // Lấy hướng từ đòn chém đến kẻ thù
                 EnemyLv1DieBySlash(direction);
             }
         }
