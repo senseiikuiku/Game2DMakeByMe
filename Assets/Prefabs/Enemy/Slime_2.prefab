@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1099310198993721147
+--- !u!1 &2640230140801106860
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8628922383955513994}
-  - component: {fileID: 3535646650619969331}
-  - component: {fileID: 1301079753948875885}
-  - component: {fileID: 3937650557723611281}
-  - component: {fileID: 3943904362088055425}
-  - component: {fileID: 4513998033249781398}
+  - component: {fileID: 1870539548137410141}
+  - component: {fileID: 4777979782085007114}
+  - component: {fileID: 3856701051346653159}
+  - component: {fileID: 2216955521388328217}
+  - component: {fileID: 7216463640897234854}
+  - component: {fileID: 6188669339328966561}
+  - component: {fileID: 9103338210449456982}
   m_Layer: 11
   m_Name: Slime_2
   m_TagString: EnemySlime
@@ -21,28 +22,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8628922383955513994
+--- !u!4 &1870539548137410141
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1099310198993721147}
+  m_GameObject: {fileID: 2640230140801106860}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.9437009, y: -7.5018063, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3535646650619969331
+--- !u!212 &4777979782085007114
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1099310198993721147}
+  m_GameObject: {fileID: 2640230140801106860}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1029608489
-  m_SortingLayer: 13
+  m_SortingLayer: 15
   m_SortingOrder: 0
   m_Sprite: {fileID: -5556704093816427650, guid: 741eb6570740fa64dbbab4368e295660, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -91,19 +92,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &1301079753948875885
+--- !u!95 &3856701051346653159
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1099310198993721147}
+  m_GameObject: {fileID: 2640230140801106860}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b3cc6005fb435544ebacdc178d93766f, type: 2}
+  m_Controller: {fileID: 9100000, guid: cbd1aa2dc5bc83d4eb432bfdc4aca6f2, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -113,13 +114,13 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!58 &3937650557723611281
+--- !u!58 &2216955521388328217
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1099310198993721147}
+  m_GameObject: {fileID: 2640230140801106860}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -149,14 +150,14 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.015495896, y: 2.0228028}
   m_Radius: 0.5160218
---- !u!50 &3943904362088055425
+--- !u!50 &7216463640897234854
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1099310198993721147}
+  m_GameObject: {fileID: 2640230140801106860}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -176,13 +177,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &4513998033249781398
+--- !u!114 &6188669339328966561
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1099310198993721147}
+  m_GameObject: {fileID: 2640230140801106860}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c7e97ece1d4357478c5ae8ab203e073, type: 3}
@@ -190,3 +191,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMoveSpeed: 1.5
   distanceToPlayer: 8
+--- !u!114 &9103338210449456982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2640230140801106860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_Priority: 0
+  m_ComponentVersion: 5
+  m_HasRenderer: 0
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_AlphaCutoff: 0.1
+  m_ApplyToSortingLayers: 00000000272d6b569d37f8ba1fac3b6c8f369df3db0c8fff8de22174255996853f58e75dc55e8f0d59b0040593591bebff51f3b8a3f85f122bcd314b29945e3d1df5c85ccb3383eceb6d85861fae2c51d9f5fe648575b142cbd8942347098a1485c1a4b2c927503d4d3047f3
+  m_ShapePath:
+  - {x: -0.5, y: 1.375, z: 0}
+  - {x: -0.5, y: 3.875, z: 0}
+  - {x: 0.6875, y: 3.875, z: 0}
+  - {x: 0.6875, y: 1.375, z: 0}
+  m_ShapePathHash: 0
+  m_InstanceId: 0
+  m_ShadowShape2DComponent: {fileID: 2216955521388328217}
+  m_ShadowShape2DProvider:
+    rid: 2305601751409492084
+  m_ShadowCastingSource: 2
+  m_ShadowMesh:
+    m_Mesh: {fileID: 0}
+    m_LocalBounds:
+      m_Center: {x: 0.09375, y: 2.625, z: 0}
+      m_Extent: {x: 0.54374695, y: 1.199997, z: 0}
+    m_EdgeProcessing: 1
+    m_TrimEdge: 0.1
+    m_FlipX: 0
+    m_FlipY: 0
+    m_InitialTrim: 0.05
+  m_CastingOption: 1
+  m_PreviousTrimEdge: 0
+  m_PreviousEdgeProcessing: -1
+  m_PreviousShadowCastingSource: -1
+  m_PreviousShadowShape2DSource: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: 2305601751409492084
+      type: {class: ShadowShape2DProvider_Collider2D, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data: 

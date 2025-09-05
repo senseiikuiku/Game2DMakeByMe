@@ -12,7 +12,7 @@ public abstract class EnemyAutoManager : MonoBehaviour
 
 
 
-    private Animator animator; // Thành phần hoạt hình cho hoạt ảnh (nếu cần)
+    protected Animator animator; // Thành phần hoạt hình cho hoạt ảnh (nếu cần)
     protected PlayerController playerController;
     protected AudioManager audioManager; // Tham chiếu đến AudioManager để quản lý âm thanh
     protected CircleCollider2D circleCollider2D; // Tham chiếu đến CircleCollider2D để điều chỉnh bán kính tấn công
@@ -75,7 +75,7 @@ public abstract class EnemyAutoManager : MonoBehaviour
         isDead = true;
         animator.SetBool(enemySlimeDie, true);
         float deadAnimLength = animator.runtimeAnimatorController.animationClips
-            .FirstOrDefault(clip => clip.name == "Slime_dead")?.length + 0.1f ?? 1f; // Lấy độ dài hoạt ảnh chết, nếu không tìm thấy thì mặc định là 1 giây
+            .FirstOrDefault(clip => clip.name == "Enemy_dead")?.length + 0.1f ?? 1f; // Lấy độ dài hoạt ảnh chết, nếu không tìm thấy thì mặc định là 1 giây
         enemyMoveSpeed = 0;
 
         if (playerController != null)
@@ -113,7 +113,7 @@ public abstract class EnemyAutoManager : MonoBehaviour
                     isAttack = true;
                     playerController.TakeDamage(transform.position);
                     float attackAnimLength = animator.runtimeAnimatorController.animationClips
-                        .FirstOrDefault(clip => clip.name == "Slime_attack")?.length + 0.1f ?? 1f; // Lấy độ dài hoạt ảnh tấn công, nếu không tìm thấy thì mặc định là 1 giây
+                        .FirstOrDefault(clip => clip.name == "Enemy_attack")?.length + 0.1f ?? 1f; // Lấy độ dài hoạt ảnh tấn công, nếu không tìm thấy thì mặc định là 1 giây
                     Debug.Log("Attack animation length: " + attackAnimLength);
                     Destroy(gameObject, attackAnimLength); // Xóa kẻ thù sau khi tấn công người chơi
                 }
@@ -124,7 +124,7 @@ public abstract class EnemyAutoManager : MonoBehaviour
                     isAttack = true;
                     playerController.TakeDamage(transform.position);
                     float attackAnimLength = animator.runtimeAnimatorController.animationClips
-                        .FirstOrDefault(clip => clip.name == "Slime_attack")?.length + 0.1f ?? 1f; // Lấy độ dài hoạt ảnh tấn công, nếu không tìm thấy thì mặc định là 1 giây
+                        .FirstOrDefault(clip => clip.name == "Enemy_attack")?.length + 0.1f ?? 1f; // Lấy độ dài hoạt ảnh tấn công, nếu không tìm thấy thì mặc định là 1 giây
                     StartCoroutine(SetAttackingFalse(attackAnimLength)); // Tắt hoạt ảnh tấn công sau khi kết thúc
                     StartCoroutine(CheckSlimeAttack()); // Đặt lại isAttack sau 2 giây
                 }
@@ -146,14 +146,6 @@ public abstract class EnemyAutoManager : MonoBehaviour
 
         animator.SetBool("isAttacking", false);
     }
-
-    // Vẽ bán kính tấn công trong Scene view để dễ dàng điều chỉnh
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, circleCollider2D != null ? circleCollider2D.radius : 1f);
-    }
-
 
     // Hàm này sẽ được gọi khi kẻ thù bị giết bởi kỹ năng của người chơi
     protected void EnemyDieBySkill(Vector2 skillDirection, float directionX, float directionY, string enemySlimeDie)

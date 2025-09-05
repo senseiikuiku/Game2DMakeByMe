@@ -13,7 +13,7 @@ public class PlayerCollision : MonoBehaviour
 
     private int keyCount = 0;
 
-
+    public bool isInDarkArea = false;
     private void Awake()
     {
         audioManager = FindAnyObjectByType<AudioManager>();
@@ -59,7 +59,11 @@ public class PlayerCollision : MonoBehaviour
                         // đặt lại vị trí người chơi đến điểm đến của cổng dịch chuyển
                         transform.position = new Vector3(portal.GetDestination().position.x, portal.GetDestination().position.y, transform.position.z);
                         portal.hasTeleported = true;
-                        Invoke(nameof(portal.ResetTeleportFlag), 0.5f);
+                        if (portal.teleportAgain)
+                        {
+                            Invoke(nameof(portal.ResetTeleportFlag), 0.5f);
+
+                        }
                         FixCameraZ();// sửa camera về vị trí chính xác
                     }
                 }
@@ -80,6 +84,7 @@ public class PlayerCollision : MonoBehaviour
                     }
                 }
                 break;
+
             case "CloseGate":
                 if (gate != null)
                 {
@@ -99,12 +104,70 @@ public class PlayerCollision : MonoBehaviour
                     }
                 }
                 break;
+
             case "OpenGate":
                 if (gate != null && gate.keyCount >= 3)
                     GameManager.Instance?.GameWin();
                 break;
+
+            case "Water":
+            case "WaterWave":
+                SetWaterState(true);
+                if (collision.tag == "WaterWave")
+                    playerController.isInWaterWave = true;
+
+                break;
+
+                //case "DarkBackGround":
+                //    isInDarkArea = true;
+                //    Debug.Log("Enter Dark Area");
+                //    break;
         }
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        switch (collision.tag)
+        {
+            case "Water":
+            case "WaterWave":
+                SetWaterState(true);
+                Debug.Log($"isInWater: {playerController.isInWater}");
+                if (collision.tag == "WaterWave")
+                    playerController.isInWaterWave = true;
+                Debug.Log($"isInWaterWave: {playerController.isInWaterWave}");
+                break;
+
+                //case "DarkBackGround":
+                //    isInDarkArea = true;
+                //    Debug.Log("Stay in Dark Area");
+                //    break;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        switch (collision.tag)
+        {
+            case "Water":
+            case "WaterWave":
+                if (collision.tag == "WaterWave")
+                    playerController.isInWaterWave = false;
+
+                if (!IsStillInWater())
+                    SetWaterState(false);
+                break;
+
+                //case "DarkBackGround":
+                //    if (!IsStillInDarkArea())
+                //    {
+                //        isInDarkArea = false;
+                //        Debug.Log("Exit Dark Area");
+                //    }
+                //    break;
+        }
+    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -164,5 +227,50 @@ public class PlayerCollision : MonoBehaviour
             camPos.z = -10f;
             vcam.transform.position = camPos;
         }
+    }
+
+    // Hàm để đặt trạng thái nước
+    private void SetWaterState(bool inWater)
+    {
+        playerController.isInWater = inWater;
+        if (inWater)
+        {
+            // Thay đổi trạng thái khi vào nước
+            if (playerController.facingDirection == 1)
+                playerController.transform.rotation = Quaternion.Euler(0, 0, -60);
+            else
+                playerController.transform.rotation = Quaternion.Euler(0, 0, 60);
+            playerController.rb.gravityScale = 0.3f;
+        }
+        else
+        {
+            // Đặt lại trạng thái ban đầu khi ra khỏi nước
+            playerController.transform.rotation = Quaternion.Euler(playerController.originalRotate);
+            playerController.rb.gravityScale = 5f;
+        }
+    }
+
+    // Kiểm tra còn trong vùng Water nào không
+    private bool IsStillInWater()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(playerController.transform.position, 0.1f);
+        foreach (var col in colliders)
+        {
+            if (col.CompareTag("Water") || col.CompareTag("WaterWave"))
+                return true;
+        }
+        return false;
+    }
+
+    // Kiểm tra còn trong vùng DarkBackGround nào không
+    private bool IsStillInDarkArea()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(playerController.transform.position, 0.1f);
+        foreach (var col in colliders)
+        {
+            if (col.CompareTag("DarkBackGround"))
+                return true;
+        }
+        return false;
     }
 }

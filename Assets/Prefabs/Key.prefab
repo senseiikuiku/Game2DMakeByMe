@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5581713703803172329}
   - component: {fileID: 6176675040783339611}
-  - component: {fileID: 2214461941615855140}
   - component: {fileID: 6689714566795070333}
+  - component: {fileID: 6713373553947021035}
   m_Layer: 0
   m_Name: Key
   m_TagString: Key
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1261554987
-  m_SortingLayer: 6
+  m_SortingLayer: 14
   m_SortingOrder: 0
   m_Sprite: {fileID: 1694913177206695654, guid: 42844b27b2f56114398efa933975f23c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -89,8 +89,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &2214461941615855140
-CircleCollider2D:
+--- !u!95 &6689714566795070333
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2599991083309696578}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f96c414c016d6ba449037d540527f8de, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!60 &6713373553947021035
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -124,26 +146,29 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.4
---- !u!95 &6689714566795070333
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2599991083309696578}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f96c414c016d6ba449037d540527f8de, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 0.875}
+    newSize: {x: 0.5, y: 0.875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.123104095, y: 0.3074311}
+      - {x: -0.1230011, y: 0.062066317}
+      - {x: -0.07006073, y: 0.06189406}
+      - {x: -0.062465668, y: -0.11569691}
+      - {x: -0.12896729, y: -0.12315881}
+      - {x: -0.12923431, y: -0.18876457}
+      - {x: -0.05953598, y: -0.19194043}
+      - {x: -0.056865692, y: -0.24059021}
+      - {x: -0.12621689, y: -0.24209952}
+      - {x: -0.12944794, y: -0.31060362}
+      - {x: 0.07551956, y: -0.31377602}
+      - {x: 0.07154465, y: 0.06402969}
+      - {x: 0.13283157, y: 0.05777085}
+      - {x: 0.12945175, y: 0.31377602}
+  m_UseDelaunayMesh: 0

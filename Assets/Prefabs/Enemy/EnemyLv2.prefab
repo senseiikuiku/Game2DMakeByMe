@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5596966964240169096}
   - component: {fileID: 8302048954432630031}
   - component: {fileID: 1909739907444890739}
+  - component: {fileID: -6317464525692381373}
   - component: {fileID: 1854384547594889862}
   m_Layer: 11
   m_Name: EnemyLv2
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1029608489
-  m_SortingLayer: 9
+  m_SortingLayer: 15
   m_SortingOrder: 0
   m_Sprite: {fileID: 3014350427971737073, guid: 25a0e5bf87bdcca4e909d0c917f08351, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -103,7 +104,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: fd632eba91d55ce4097b7d0cd7fe8ea6, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -147,7 +148,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.001942873, y: 0.000000059604645}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -157,7 +158,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.6875}
+  m_Size: {x: 0.6308484, y: 0.9361917}
   m_EdgeRadius: 0
 --- !u!50 &1909739907444890739
 Rigidbody2D:
@@ -186,6 +187,59 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-6317464525692381373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880163153263367494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_Priority: 0
+  m_ComponentVersion: 5
+  m_HasRenderer: 0
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_AlphaCutoff: 0.1
+  m_ApplyToSortingLayers: 00000000272d6b569d37f8ba1fac3b6c8f369df3db0c8fff8de22174255996853f58e75dc55e8f0d59b0040593591bebff51f3b8a3f85f122bcd314b29945e3d1df5c85ccb3383eceb6d85861fae2c51d9f5fe648575b142cbd8942347098a1485c1a4b2c927503d4d3047f3
+  m_ShapePath:
+  - {x: -0.5, y: -0.53125, z: 0}
+  - {x: -0.5, y: 0.53125, z: 0}
+  - {x: 0.5, y: 0.53125, z: 0}
+  - {x: 0.5, y: -0.53125, z: 0}
+  m_ShapePathHash: 0
+  m_InstanceId: 0
+  m_ShadowShape2DComponent: {fileID: 8302048954432630031}
+  m_ShadowShape2DProvider:
+    rid: 2305601751409492064
+  m_ShadowCastingSource: 2
+  m_ShadowMesh:
+    m_Mesh: {fileID: 0}
+    m_LocalBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.44999695, y: 0.48124695, z: 0}
+    m_EdgeProcessing: 1
+    m_TrimEdge: 0.1
+    m_FlipX: 0
+    m_FlipY: 0
+    m_InitialTrim: 0.05
+  m_CastingOption: 1
+  m_PreviousTrimEdge: 0
+  m_PreviousEdgeProcessing: -1
+  m_PreviousShadowCastingSource: -1
+  m_PreviousShadowShape2DSource: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: 2305601751409492064
+      type: {class: ShadowShape2DProvider_Collider2D, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data: 
 --- !u!114 &1854384547594889862
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
 
         if (playerController != null)
         {
-            playerController.jumpForce = 15f;
+            playerController.jumpForce = 18f;
             playerController.maxJumpCount = 2;
             playerController.moveSpeed += 1f;
         }

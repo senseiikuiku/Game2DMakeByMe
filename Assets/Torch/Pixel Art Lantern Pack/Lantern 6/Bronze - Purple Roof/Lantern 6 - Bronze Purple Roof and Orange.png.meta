@@ -1,0 +1,1051 @@
+fileFormatVersion: 2
+guid: 5ff09deaeb6f8814c83b4ab9154fe3d9
+AssetOrigin:
+  serializedVersion: 1
+  productId: 279944
+  packageName: Pixel Art Lantern Pack - Animated
+  packageVersion: 1.1
+  assetPath: Assets/karsiori/Pixel Art Lantern Pack/Lantern 6/Bronze - Purple Roof/Lantern
+    6 - Bronze Purple Roof and Orange.png
+  uploadId: 670283
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b054e0f121e1bc041bc74a9145041c5c
+      internalID: -1360604164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 200
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7ad24cebec826a4b96a894e4d72490c
+      internalID: 494030729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 200
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b467a510bb750644e823ab73cd1d5df4
+      internalID: 1980657214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_3
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 200
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81832eb52e96f5b498137e2359602baa
+      internalID: -84988470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_4
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 200
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4860e8568a583944b99b9a54836ee017
+      internalID: -439436237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_5
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 200
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d070723dd6c36248ae6761ac11de066
+      internalID: -1112395173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_6
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 200
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c14c613223d333040b772def6b7b2298
+      internalID: 782988616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 503d3887a12355148b4ff00e555c5427
+      internalID: 1843846702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_8
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 160
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc9000c229f74e2418d7b19fac1a3802
+      internalID: 383013868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_9
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 160
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b907d8d60f692a14a928df229a95a09e
+      internalID: -102867828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_10
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 160
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0203fe09cda3c842b3fb528be03ca72
+      internalID: -18531045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_11
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 160
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f79de467eb276e44e90d73f68b45979d
+      internalID: -275367501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_12
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 160
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 194b7e2d7360b7c4e8372b34eba7d247
+      internalID: -1207383870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_13
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 160
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79a8586ac923f634a864237886e8dc0b
+      internalID: 1726894501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e9d0bd8f5d24e044ad55600351ff819
+      internalID: 1039567570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_15
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 120
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 744a9ecb326bdaf41a751f7d59ed2f03
+      internalID: -831907280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_16
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 120
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24e7f1912a9e27440af342616a44fd3e
+      internalID: -232400770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_17
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 120
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a1c08e0dc84a814cba08e909f2c2a4a
+      internalID: -636037664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_18
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 120
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 388e45c8c7091f941a8afd987a768c8e
+      internalID: 1881699585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_19
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 120
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08f7f6a0e2f76a743bd9ebfe3cf1a81b
+      internalID: -1210157726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_20
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 120
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50b60fc6abeba01478f41f84afa7deb8
+      internalID: 748982562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35ec8054580556e43b5cadafc30ff1a3
+      internalID: 391073369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_22
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 80
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf9fb4815d6b9374a9a934589a8afd05
+      internalID: 2038332666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_23
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 80
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e805bf19adf29fe4e9bef58a07109a38
+      internalID: -655799414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_24
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 80
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fd3c4d537d16f543822dab1ea79172c
+      internalID: -1531682063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_25
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 80
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a30373bcf7f4554a9dad89fb02e2585
+      internalID: 360238651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_26
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 80
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d01787880c9af640a3e4b0bfdaa9473
+      internalID: 1114197773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_27
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 80
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 268e8f48ebf1a714e9372a9502f8c28b
+      internalID: 196277186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 40
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b97341c896b8d7c4486e692cec0e7d25
+      internalID: -108668356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_29
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 40
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a44437037ca211b47a775c6d48e650a2
+      internalID: 1678691498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_30
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 40
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb8152fde398939409f7cc557d3f27a7
+      internalID: 1776335214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_31
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 40
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc07cd033659ce4aa42da552ee01c76
+      internalID: 786135685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_32
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 40
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4ba040d3b8a98f4cb98d306df730dd2
+      internalID: 1053792228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_33
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 40
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 733bee087d947ba4e97878eb0f1b5e98
+      internalID: -2087309254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_34
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 40
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d35ca44250fc1c9468dea81f5b932b5c
+      internalID: 1282136535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f38cde9fca272444787fa48355e8ca4c
+      internalID: 685511633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_36
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 0
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b6ac7de14b772c47928aa90ce423633
+      internalID: -186185452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lantern 6 - Bronze Purple Roof and Orange_37
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 0
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed8a3ae7ec117024397fa72972f93875
+      internalID: -152155752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Lantern 6 - Bronze Purple Roof and Orange_0: -1360604164
+      Lantern 6 - Bronze Purple Roof and Orange_1: 494030729
+      Lantern 6 - Bronze Purple Roof and Orange_10: -18531045
+      Lantern 6 - Bronze Purple Roof and Orange_11: -275367501
+      Lantern 6 - Bronze Purple Roof and Orange_12: -1207383870
+      Lantern 6 - Bronze Purple Roof and Orange_13: 1726894501
+      Lantern 6 - Bronze Purple Roof and Orange_14: 1039567570
+      Lantern 6 - Bronze Purple Roof and Orange_15: -831907280
+      Lantern 6 - Bronze Purple Roof and Orange_16: -232400770
+      Lantern 6 - Bronze Purple Roof and Orange_17: -636037664
+      Lantern 6 - Bronze Purple Roof and Orange_18: 1881699585
+      Lantern 6 - Bronze Purple Roof and Orange_19: -1210157726
+      Lantern 6 - Bronze Purple Roof and Orange_2: 1980657214
+      Lantern 6 - Bronze Purple Roof and Orange_20: 748982562
+      Lantern 6 - Bronze Purple Roof and Orange_21: 391073369
+      Lantern 6 - Bronze Purple Roof and Orange_22: 2038332666
+      Lantern 6 - Bronze Purple Roof and Orange_23: -655799414
+      Lantern 6 - Bronze Purple Roof and Orange_24: -1531682063
+      Lantern 6 - Bronze Purple Roof and Orange_25: 360238651
+      Lantern 6 - Bronze Purple Roof and Orange_26: 1114197773
+      Lantern 6 - Bronze Purple Roof and Orange_27: 196277186
+      Lantern 6 - Bronze Purple Roof and Orange_28: -108668356
+      Lantern 6 - Bronze Purple Roof and Orange_29: 1678691498
+      Lantern 6 - Bronze Purple Roof and Orange_3: -84988470
+      Lantern 6 - Bronze Purple Roof and Orange_30: 1776335214
+      Lantern 6 - Bronze Purple Roof and Orange_31: 786135685
+      Lantern 6 - Bronze Purple Roof and Orange_32: 1053792228
+      Lantern 6 - Bronze Purple Roof and Orange_33: -2087309254
+      Lantern 6 - Bronze Purple Roof and Orange_34: 1282136535
+      Lantern 6 - Bronze Purple Roof and Orange_35: 685511633
+      Lantern 6 - Bronze Purple Roof and Orange_36: -186185452
+      Lantern 6 - Bronze Purple Roof and Orange_37: -152155752
+      Lantern 6 - Bronze Purple Roof and Orange_4: -439436237
+      Lantern 6 - Bronze Purple Roof and Orange_5: -1112395173
+      Lantern 6 - Bronze Purple Roof and Orange_6: 782988616
+      Lantern 6 - Bronze Purple Roof and Orange_7: 1843846702
+      Lantern 6 - Bronze Purple Roof and Orange_8: 383013868
+      Lantern 6 - Bronze Purple Roof and Orange_9: -102867828
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

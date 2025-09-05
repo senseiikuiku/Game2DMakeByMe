@@ -10,6 +10,8 @@ public class FireBulletLv2 : FireBulletManager
             collision.collider.CompareTag("EnemyLv2") ||
             collision.collider.CompareTag("Boss") ||
             collision.collider.CompareTag("MysteryBlock") ||
+            collision.collider.CompareTag("EnemySlime") ||
+            collision.collider.CompareTag("EnemyFish") ||
                 collision.gameObject.CompareTag("FireBallEffect") |
             collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {

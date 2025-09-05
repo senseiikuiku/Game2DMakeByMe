@@ -9,7 +9,7 @@ public class Slime_1 : EnemyAutoManager
 
         if (tag == "Player")
         {
-            string nameEnemy = gameObject.name;
+            string nameEnemy = "Slime_1";
             ContactPoint2D contact = collision.GetContact(0);
             HandlePlayerCollision(contact, "isDead", nameEnemy);
         }

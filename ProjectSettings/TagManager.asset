@@ -32,6 +32,9 @@ TagManager:
   - MysteryBlockCoin
   - EnemySlime
   - Water
+  - WaterWave
+  - EnemyFish
+  - DarkBackGround
   layers:
   - Default
   - TransparentFX
@@ -72,14 +75,14 @@ TagManager:
   - name: BackGround
     uniqueID: 1449864487
     locked: 0
-  - name: Item
-    uniqueID: 1261554987
-    locked: 0
-  - name: Ground
-    uniqueID: 4087166607
+  - name: Trap
+    uniqueID: 3136829341
     locked: 0
   - name: Water
     uniqueID: 1815850015
+    locked: 0
+  - name: Ground
+    uniqueID: 4087166607
     locked: 0
   - name: ForeGround
     uniqueID: 4287565019
@@ -89,6 +92,9 @@ TagManager:
     locked: 0
   - name: BrokenGround
     uniqueID: 2241222949
+    locked: 0
+  - name: TeleportationPortal
+    uniqueID: 1575442495
     locked: 0
   - name: BrokenWall
     uniqueID: 227499717
@@ -102,11 +108,11 @@ TagManager:
   - name: ObjectBlock
     uniqueID: 3102953983
     locked: 0
-  - name: TeleportationPortal
-    uniqueID: 1575442495
-    locked: 0
   - name: Gate
     uniqueID: 308279459
+    locked: 0
+  - name: Item
+    uniqueID: 1261554987
     locked: 0
   - name: Enemy
     uniqueID: 1029608489

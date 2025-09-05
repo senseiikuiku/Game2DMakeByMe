@@ -37,6 +37,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private SlashComboLv2 slashComboLv2;
     public int slashLevel = 0; // Cấp độ chém, có thể mở rộng sau này nếu cần
 
+    public bool isInWater = false; // Kiểm tra trạng thái trong nước
+    public bool isInWaterWave = false; // Kiểm tra trạng thái trong sóng nước
+    public Vector3 originalRotate; // Lưu trữ góc quay ban đầu
 
     public void Awake()
     {
@@ -49,6 +52,7 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
+        originalRotate = transform.eulerAngles; // Lưu góc quay ban đầu
     }
 
     void Update()
@@ -69,38 +73,110 @@ public class PlayerController : MonoBehaviour
     public int facingDirection = 1; // 1: phải, -1: trái
     private void HandleMovement()
     {
-        float moveInput = Input.GetAxis("Horizontal");
-        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
-        if (moveInput > 0)
+        float moveInputX = Input.GetAxis("Horizontal");
+        float moveInputY = Input.GetAxis("Vertical");
+
+        if (isInWater)
         {
-            transform.localScale = new Vector3(1, 1, 1); // lật mặt phải
-            facingDirection = 1; // Đặt hướng đối diện là phải
+            // Giữ nguyên gravity để rơi tự nhiên
+            rb.linearVelocity = new Vector2(moveInputX * moveSpeed, rb.linearVelocity.y);
+
+            // Nếu nhấn phím lên/xuống thì cộng thêm lực bơi
+            if (moveInputY != 0)
+            {
+                rb.linearVelocity = new Vector2(
+                    rb.linearVelocity.x,
+                    moveInputY * moveSpeed * 0.5f   // hệ số nhỏ hơn để bơi nhẹ hơn gravity
+                );
+            }
+
+            // Lật mặt theo hướng ngang
+            if (moveInputX > 0)
+            {
+                transform.localScale = new Vector3(1, 1, 1);
+                facingDirection = 1;
+            }
+            else if (moveInputX < 0)
+            {
+                transform.localScale = new Vector3(-1, 1, 1);
+                facingDirection = -1;
+            }
         }
-        else if (moveInput < 0)
+        else
         {
-            transform.localScale = new Vector3(-1, 1, 1); // laật mặt trái
-            facingDirection = -1; // Đặt hướng đối diện là trái
+            // Di chuyển bình thường trên đất
+            rb.linearVelocity = new Vector2(moveInputX * moveSpeed, rb.linearVelocity.y);
+
+            if (moveInputX > 0)
+            {
+                transform.localScale = new Vector3(1, 1, 1);
+                facingDirection = 1;
+            }
+            else if (moveInputX < 0)
+            {
+                transform.localScale = new Vector3(-1, 1, 1);
+                facingDirection = -1;
+            }
         }
     }
 
     private int jumpCount = 0;
     public int maxJumpCount = 1;
     private bool wasGrounded;// Biến để lưu trạng thái mặt đất trước đó
-
     private void HandleJump()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer); // Kiểm tra xem người chơi có đang ở trên mặt đất hay không
+
+        // Nếu đang trong nước
+        if (isInWater)
+        {
+            if (isInWaterWave)
+            {
+                // Nhảy giống như trên mặt đất khi ở trong WaterWave
+                if (Input.GetKeyDown(KeyCode.UpArrow) && jumpCount > 0)
+                {
+                    audioManager.PlayJumpSound();
+                    rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+                    jumpCount--;
+                }
+
+                // Reset jumpCount khi vào WaterWave (như một bề mặt nhảy)
+                if (isInWaterWave && jumpCount <= 0)
+                {
+                    jumpCount = maxJumpCount; // Reset ngay khi ở trong WaterWave
+                }
+            }
+
+        }
+        else
+        {
+            // --- Trên mặt đất (không ở trong nước) ---
+            if (Input.GetKeyDown(KeyCode.UpArrow) && jumpCount > 0 && !isInWater)
+            {
+                audioManager.PlayJumpSound();
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+                jumpCount--;
+            }
+        }
+
+        // Reset jumpCount khi chạm đất từ trạng thái không chạm đất
         if (isGrounded && !wasGrounded)
         {
             jumpCount = maxJumpCount;
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow) && jumpCount > 0)
-        {
-            audioManager.PlayJumpSound(); // Hiệu ứng âm thanh khi nhảy
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-            jumpCount--;
-        }
+
+        // Cập nhật trạng thái mặt đất trước đó
         wasGrounded = isGrounded;
+    }
+
+    // Vẽ bán kính ra Scene để dễ nhìn
+    private void OnDrawGizmos()
+    {
+        if (groundCheck != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(groundCheck.position, 0.2f);
+        }
     }
 
     private void UpdateAnimation()
@@ -121,6 +197,9 @@ public class PlayerController : MonoBehaviour
 
     private void HandleSeat()
     {
+        if (isInWater)
+            return; // Không ngồi trong nước
+
         if (isGrounded && Input.GetKey(KeyCode.DownArrow))
         {
             animator.SetBool("isSitting", true);
